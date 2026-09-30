@@ -1,0 +1,124 @@
+---
+title: "RExercise2_Andujar"
+output: html_document
+date: "2026-09-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## Part A - Arithmetic Operations
+
+```{r}
+a <- 17
+b <- 5
+a + b 
+a - b
+a * b
+a / b
+
+a %% b
+a %/% b
+
+2^10
+
+ 
+#Question 1:
+#All three results calculates division, but each one displays a different output that resulted from division. "%%" displays the integer, but don't include the decimal; "%/%" displays the remainder of the division; "/" displays the actual quotient with its decimal.
+
+#Question 2:
+#Yes.
+
+```
+
+## Part B - Basic Data Types
+
+```{r}
+x <- 42
+y <- 42L       
+z <- "42"
+w <- TRUE
+v <- 3 + 2i   
+
+typeof(x)
+typeof(y)
+typeof(z)
+typeof(w)
+typeof(v)
+
+class(x)
+class(y)
+class(z)
+class(w)
+class(v)
+
+mode(x)
+mode(y)
+mode(z)
+mode(w)
+mode(v)
+
+
+#Question 3:
+#The use of L in the variable y converts its value into an integer. x is declared as double by default in R language.
+
+#Question #4:
+#typeof() checks the data type of the variable
+#class() seems to check the values inside the variable based on its class.
+#mode() seems to check the actual values inside the variable.
+```
+
+## Part C - Type Conversion
+
+```{r}
+num_string <- "123"
+as.numeric(num_string)
+
+typeof(num_string)
+class(num_string)
+mode(num_string)
+
+0
+1
+as.logical(0)
+as.logical(1)
+# 0 and 1 is converted into its logical counterparts respectively.   
+
+bad_string <- "hello123"
+as.numeric(bad_string)
+```
+
+## Part D - Strings, paste(), and paste0()
+
+```{r}
+
+```
+
+## Part E - Critical Thinking Challenge
+
+```{r}
+
+```
+
