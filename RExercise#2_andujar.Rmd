@@ -37,20 +37,24 @@ b <- 5
 a + b 
 a - b
 a * b
-a / b
+
+```
+```{r}
+a <- 17
+b <- 5
 
 a %% b
 a %/% b
-
+```
+```{r}
 2^10
-
- 
+```
+```{r}
 #Question 1:
 #All three results calculates division, but each one displays a different output that resulted from division. "%%" displays the integer, but don't include the decimal; "%/%" displays the remainder of the division; "/" displays the actual quotient with its decimal.
 
 #Question 2:
 #Yes.
-
 ```
 
 ## Part B - Basic Data Types
@@ -67,20 +71,34 @@ typeof(y)
 typeof(z)
 typeof(w)
 typeof(v)
+```
+```{r}
+x <- 42
+y <- 42L       
+z <- "42"
+w <- TRUE
+v <- 3 + 2i   
 
 class(x)
 class(y)
 class(z)
 class(w)
 class(v)
+```
+```{r}
+x <- 42
+y <- 42L       
+z <- "42"
+w <- TRUE
+v <- 3 + 2i   
 
 mode(x)
 mode(y)
 mode(z)
 mode(w)
 mode(v)
-
-
+```
+```{r}
 #Question 3:
 #The use of L in the variable y converts its value into an integer. x is declared as double by default in R language.
 
@@ -99,21 +117,35 @@ as.numeric(num_string)
 typeof(num_string)
 class(num_string)
 mode(num_string)
-
+```
+```{r}
 0
 1
 as.logical(0)
 as.logical(1)
-# 0 and 1 is converted into its logical counterparts respectively.   
+# 0 and 1 is converted into its logical counterparts respectively.  
+```
 
+```{r}
 bad_string <- "hello123"
 as.numeric(bad_string)
+```
+
+```{r}
+# Question 5:
+#To prevent the code from becoming an error.
+#It could present an error in other parts of the code.
+
+# Question 6
+#The result is TRUE for both (2) and (-1).
+#R seems to be following a rule where '0' is always FALSE, while any number, including negative numbers results in TRUE.
 ```
 
 ## Part D - Strings, paste(), and paste0()
 
 ```{r}
-
+first_name <- "Juan"
+last_name <- "Dela Cruz"
 ```
 
 ## Part E - Critical Thinking Challenge
