@@ -1,0 +1,157 @@
+---
+title: "RExcercise3_Andujar"
+output: html_document
+date: "2026-10-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+ ******* PART A - Creating Vectors: c(), seq(), rep() *******
+```{r} 
+# TODO: Create a numeric vector called scores containing: 88, 92, 79, 95, 84
+# Then create a character vector called subjects containing:
+# "Math", "Science", "English", "History", "PE"
+
+scores <- c(88, 92, 79, 95, 84)
+subjects <- c("Math", "Science", "English", "History", "PE")
+```
+
+```{r}
+# TODO: Use seq() to create a vector called odds containing odd numbers
+# from 1 to 19 (hint: use the "by" argument)
+
+# TODO: Use seq() with length.out to create a vector of exactly 5 evenly
+# spaced numbers between 0 and 1
+
+1:19
+seq(1, 19, by = 2) 
+seq(0, 1, length.out = 5)
+```
+
+```{r}
+# TODO: Use rep() to create a vector that repeats the value "A" 4 times
+
+# TODO: Use rep() with the "each" argument to turn c("A", "B") into
+# "A" "A" "B" "B" (each element repeated twice, in order)
+
+# TODO: Use rep() with the "times" argument to turn c("A", "B") into
+# "A" "B" "A" "B" (the whole sequence repeated twice)
+
+rep(c("A"), 4)
+rep(c("A", "B"), each = 2) 
+rep(c("A", "B"), times = 2)
+```
+
+```{r}
+#Question #1:
+
+#Set up a vector named age, consisting of 15, 28, 32, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 12, 42, 53, 41, 51, 35, 24, 33, 8.
+
+age <- c(15, 28, 32, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 12, 42, 53, 41, 51, 35, 24, 33, 8)
+
+#a. How many data points?
+length(age)
+#Answer: 34 data points.
+
+#b. Find the reciprocal of age?
+1 / age
+#Answer:[1] 0.06666667 0.03571429 0.03125000 0.02777778 0.03703704 0.05555556 0.01923077 0.02564103
+#[9] 0.02380952 0.03448276 0.02857143 0.03225806 0.03703704 0.04545455 0.02702703 0.02941176
+#[17] 0.05263158 0.05000000 0.01754386 0.02040816 0.02000000 0.02702703 0.02173913 0.04000000
+#[25] 0.05882353 0.08333333 0.02380952 0.01886792 0.02439024 0.01960784 0.02857143 0.04166667
+#[33] 0.03030303 0.12500000
+
+#c. Assign also new_age <- c(age, 0, age). What happens to new_age?
+new_age <- c(age, 0, age)
+#Answer: the new_age has double the amount of data points as age plus 1 due to the number 0 adding 1 more value resulting to 68+1(the 0)= 69 total data points. 
+
+#d. Find the minimum and the maximum value of age.
+min(age) # 8
+max(age) # 57
+```
+
+```{r}
+#Question #2:
+
+#rep(c("A","B"), each = 2) and rep(c("A","B"), times = 2) both produce a vector of length 4, but with different element orders.
+#Explain in your own words the difference between each and times.
+
+#Answer: each will firstly display the first element in the vector, then to the next one after a certain amount of times; times will display all elements inside a vector a certain amount of times. 
+```
+
+```{r}
+#Question #3:
+
+#Compare seq(1, 20, by = 2) with seq(1, 20, length.out = 5). What does each argument (by vs length.out) control, and when would you use one over the other in a real analysis?
+
+#Answer: by is used to count each number up to the last one. If by > 1, say by = 2, then by will count the numbers by 2, which would skip other numbers. length.out on the other hand will calculate the spacing of each numbers up to reaching the value of 20 in this case. the spacing for each one is equal to one another. 
+
+```
+
+```{r}
+#Question #4:
+
+#a. Generate a sequence for 20 to 60. Name the vector as vec_num
+(20:60)
+vec_num <- c(20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60)
+#b. Get the mean for vec_num.
+mean(vec_num) # 40
+
+#c. Get the sum for vec_num.
+sum(vec_num) # 1640
+
+#d: How many data points are there in vec_num?
+length(vec_num) # 41 data points.
+```
+
+ ******* PART B - Subsetting (Accessing) Vectors *******
+```{r}
+grades <- c(88, 92, 79, 95, 84)
+names(grades) <- c("Math", "Science", "English", "History", "PE")
+
+# TODO: Access the 3rd element of grades using positional indexing
+grades[3]
+
+# TODO: Access the 1st abd 4th element of grades using positional indexing
+grades[c(1, 4)]
+
+# TODO: Access "Science" and "PE" together using their names
+grades[c("Science", "PE")]
+
+```
+  
+```{r}
+# TODO: Return all elements of grades EXCEPT the 1st and 4th, using
+# negative indexing, e.g. grades[-c(...)]
+
+grades[-c(1, 4)]
+```
+  
+```{r}
+# TODO: Use a logical condition to return only the grades that are
+# greater than or equal to 85 (hint: grades[grades >= 85])
+```
+  
+  
