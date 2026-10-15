@@ -152,6 +152,11 @@ grades[-c(1, 4)]
 ```{r}
 # TODO: Use a logical condition to return only the grades that are
 # greater than or equal to 85 (hint: grades[grades >= 85])
+
+grades[grades >= 85]
 ```
   
-  
+```{r}
+
+
+``` 
