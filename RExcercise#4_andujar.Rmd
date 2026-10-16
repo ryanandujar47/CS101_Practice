@@ -46,7 +46,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 
 
-#c: Find the minimum and the maximum value of worker’s age.
+#Find the minimum and the maximum value of worker’s age.
 
 
 
