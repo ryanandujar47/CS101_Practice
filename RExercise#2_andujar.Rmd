@@ -32,6 +32,8 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 ## Part A - Arithmetic Operations
 
 ```{r}
+# TODO: Store 17 in a variable called a, and 5 in a variable called b
+# Then print the results of: a + b, a - b, a * b, a / b
 a <- 17
 b <- 5
 a + b 
@@ -39,16 +41,23 @@ a - b
 a * b
 
 ```
+
 ```{r}
+# TODO: Using the same a and b, compute and print a %% b and a %/% b
+# a %% b = remainder of a / b
+# a %/% b = whole-number (integer) division
 a <- 17
 b <- 5
 
 a %% b
 a %/% b
 ```
+
 ```{r}
+# TODO: Print 2 raised to the power of 10 using the ^ operator
 2^10
 ```
+
 ```{r}
 #Question 1:
 #All three results calculates division, but each one displays a different output that resulted from division. "%%" displays the integer, but don't include the decimal; "%/%" displays the remainder of the division; "/" displays the actual quotient with its decimal.
@@ -60,6 +69,7 @@ a %/% b
 ## Part B - Basic Data Types
 
 ```{r}
+# TODO: Use typeof() to check the type of each of x, y, z, w, v
 x <- 42
 y <- 42L       
 z <- "42"
@@ -72,7 +82,9 @@ typeof(z)
 typeof(w)
 typeof(v)
 ```
+
 ```{r}
+# TODO: Use class() to check the class of each of x, y, z, w, v
 x <- 42
 y <- 42L       
 z <- "42"
@@ -85,7 +97,9 @@ class(z)
 class(w)
 class(v)
 ```
+
 ```{r}
+# TODO: Use mode() to check the class of each of x, y, z, w, v
 x <- 42
 y <- 42L       
 z <- "42"
@@ -98,11 +112,12 @@ mode(z)
 mode(w)
 mode(v)
 ```
+
 ```{r}
-#Question 3:
+#Question 3: Answer
 #The use of L in the variable y converts its value into an integer. x is declared as double by default in R language.
 
-#Question #4:
+#Question #4: Answer
 #typeof() checks the data type of the variable
 #class() seems to check the values inside the variable based on its class.
 #mode() seems to check the actual values inside the variable.
@@ -111,6 +126,8 @@ mode(v)
 ## Part C - Type Conversion
 
 ```{r}
+# TODO: Convert num_string to a numeric value using as.numeric()
+# Then check its type with typeof(), class(), and mode()
 num_string <- "123"
 as.numeric(num_string)
 
@@ -118,7 +135,10 @@ typeof(num_string)
 class(num_string)
 mode(num_string)
 ```
+
 ```{r}
+# TODO: Convert the number 0 and the number 1 to logical using as.logical()
+# What do you get?
 0
 1
 as.logical(0)
@@ -127,16 +147,18 @@ as.logical(1)
 ```
 
 ```{r}
+# TODO: Try converting bad_string to numeric using as.numeric()
+# Run this chunk and observe the warning message and the result
 bad_string <- "hello123"
 as.numeric(bad_string)
 ```
 
 ```{r}
-# Question 5:
+# Question 5: Answer
 #To prevent the code from becoming an error.
 #It could present an error in other parts of the code.
 
-# Question 6
+# Question 6: Answer
 #The result is TRUE for both (2) and (-1).
 #R seems to be following a rule where '0' is always FALSE, while any number, including negative numbers results in TRUE.
 ```
@@ -144,8 +166,53 @@ as.numeric(bad_string)
 ## Part D - Strings, paste(), and paste0()
 
 ```{r}
+# TODO: Print first_name and last_name using print() and/or cat()
 first_name <- "Juan"
 last_name <- "Dela Cruz"
+
+print(first_name)
+print(last_name)
+
+cat(first_name, last_name, "\n")
+```
+
+```{r}
+# TODO: Use paste() to combine first_name and last_name into a full name
+# TODO: Use paste0() to do the same, and compare the two results
+
+full_name <- paste(first_name, last_name)
+print(full_name)
+
+full_name0 <- paste0(first_name, last_name)
+print(full_name0)
+```
+
+```{r}
+# TODO: Use paste() with the argument sep = "-" to join first_name and
+# last_name with a dash instead of a space
+
+name_with_dash <- paste(first_name, last_name, sep = "-")
+print(name_with_dash)
+```
+
+```{r}
+age <- 21
+# TODO: Use paste0() to build the sentence:
+# "Juan Dela Cruz is 21 years old." by combining full_name, age, and text
+
+sentence <- paste0(full_name, " is ", age, " years old.")
+print(sentence)
+```
+```{r}
+#Question #7: paste() and paste0() produced different results for the same two strings. Explain exactly why, referencing what each function does by default.
+
+
+```
+
+```{r}
+#Question #8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string.
+
+
 ```
 
 ## Part E - Critical Thinking Challenge
