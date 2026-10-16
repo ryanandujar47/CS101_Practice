@@ -218,6 +218,35 @@ print(sentence)
 ## Part E - Critical Thinking Challenge
 
 ```{r}
+# TODO: Predict, then test: what is the result of "5" + 5 in R?
+# Run it and read the error message carefully.
+
+
+```
+
+```{r}
+# TODO: Now fix the code above so that "5" + 5 correctly evaluates to 10
+# using an appropriate conversion function.
+
+
+```
+
+```{r}
+#Question #9: Some programming languages automatically convert "5" + 5 into 10 without an error. R does not.
+
+#Based on what you’ve learned about R’s data types in this lab, why do you think R requires an explicit conversion instead of guessing what the programmer meant?
+
+
+```
+
+```{r}
+Question #10: Suppose a classmate writes a script that reads a column of “numbers” from a text file. The column looks numeric, but when they try sum() on it, R throws an error. Based on everything in this lab (types, typeof()/class()/mode(), conversion, warnings), write a short paragraph explaining what likely went wrong and the steps you’d take to diagnose and fix it.
+
+
+```
+
+CONCLUSION
+```{r}
 
 ```
 
