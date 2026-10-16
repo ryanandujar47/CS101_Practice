@@ -157,6 +157,113 @@ grades[grades >= 85]
 ```
   
 ```{r}
+#Question #5:
 
+#Negative indexing (grades[-1]) removes an element, while logical indexing (grades[grades >= 85]) filters by a condition.
+
+#Describe a real situation where you would need negative indexing, and a different situation where logical indexing would be the better tool.
+
+
+#Answer: one of the examples where we can use logical indexing is when cleaning out missing data. It can be in a form of a survey, then use logical indexing to only get the data that respondents actually answered in the survey, while cleaning up the rest.
+
+#As for negative indexing. One of its use case dropping a specific column when importing a spreadsheet into a matrix. This is useful if only a few specific columns are needed to run math on the data by omitting the irrelevant data.
 
 ``` 
+
+```{r}
+#Question #6:
+
+#What happens if you run grades[10] (an index that doesn’t exist)? Run it, observe the result, and explain why R responds this way instead of throwing an error.
+
+
+#Answer: The result is NA. In this specific code, it looks for an element in index 10, but there's no value and the current vector only spans up to 5 indexes with their respective values, hence it returns NA.
+
+```
+
+```{r}
+#Question #7:
+
+#Print a vector with the integers between 1 and 100 that are not divisible by 3, 5 and 7 using filter option.
+
+#Write the R code and its output.
+
+Filter(function(i) { all(i %% c(3,5,7) != 0) }, seq(100))
+
+#Output:  [1]  1  2  4  8 11 13 16 17 19 22 23 26 29 31 32 34 37 38 41 43 44 46 47 52 53
+#[26] 58 59 61 62 64 67 68 71 73 74 76 79 82 83 86 88 89 92 94 97
+```
+
+ *******PART C - Vector Operations and append()
+```{r}
+x <- c(1, 2, 3, 4)
+y <- c(10, 20, 30, 40)
+
+# TODO: Add x and y element-wise, and print the result
+
+sum_result <- x + y
+print(sum_result)
+
+# TODO: Multiply every element of x by 2
+
+multiply_result <- x * 2
+print(multiply_result)
+```
+
+```{r}
+z <- c(1, 2, 3, 4, 5, 6)
+short <- c(1, 0)
+
+# TODO: Add z and short together and print the result. Run this even
+# though the vectors are different lengths -- observe what R does.
+
+print(z + short)
+
+```
+
+```{r}
+fruits <- c("apple", "banana", "cherry")
+
+# TODO: Use append() to add "date" to the end of fruits
+
+fruits <- append(fruits, "date")
+print(fruits)
+
+# TODO: Use append() with the "after" argument to insert "kiwi" between
+# "apple" and "banana" (i.e., after position 1)
+
+fruits <- append(fruits, "kiwi", after = 1)
+print(fruits)
+
+```
+
+```{r}
+#Question #8:
+
+#In the vectors-recycling chunk, z has 6 elements and short has only 2. R still produced an answer instead of an error.
+
+#Answer: R has vector recycling, where it repeats the elements in the shorter vector until it matches the length of the longer vector.
+
+
+#Explain, in your own words, what R’s “recycling rule” did to short to make the addition work.
+
+#Answer: R will add the elements of z and short starting from the very first element, down to the last one. If one vector is shorter than the other, the shorter vector will reach its last element first, then the addition will now go back to the first element of that vector to execute the addition until all the elements in the longer vector gets visited.
+```
+
+```{r}
+#Question #9: Now try adding z (length 6) to c(1, 0, 1) (length 3) instead. Does it work cleanly?
+
+result <- z + c(1, 0, 1)
+
+print(result)
+
+#Answer: Yes, it works cleanly, with no warnings since both z and c lengths are divisible.
+
+#Then try adding z to c(1, 0, 1, 1) (length 4). Compare the warning (or lack of one) in each case, and explain what condition determines whether R recycles silently versus with a warning.
+
+result <- z + c(1, 0, 1, 1)
+
+print(result)
+
+#Answer: the determining condition is whether both lengths of the two variables are multiples of one another, or divides with no decimal. If both variable lengths aren't multiples of one another, R will display an error, but still executes the code. 
+```
+
