@@ -267,3 +267,77 @@ print(result)
 #Answer: the determining condition is whether both lengths of the two variables are multiples of one another, or divides with no decimal. If both variable lengths aren't multiples of one another, R will display an error, but still executes the code. 
 ```
 
+******* PART D — Lists: Creating and Subsetting
+
+```{r}
+# TODO: Create a list called student with these named elements:
+# name = "Maria Santos", age = 20, grades = c(88, 92, 79),
+# is_enrolled = TRUE
+
+student <- list(
+name = "Maria Santos",
+age = 20,
+grades = c(88, 92, 79),
+is_enrolled = TRUE
+)
+```
+
+```{r}
+# TODO: Access the "grades" element of student using single brackets
+# student["grades"] -- then check its type with class()
+
+student["grades"]
+class(student)
+```
+
+```{r}
+# TODO: Access the "grades" element of student using double brackets
+# student[["grades"]] -- then check its type with class()
+
+student[["grades"]]
+class(student)
+```
+
+```{r}
+# TODO: Access the "name" element of student using the $ operator
+# student$name
+
+student$name
+```
+
+```{r}
+# TODO: From student, extract just the SECOND grade in the grades vector
+# in a single expression, e.g. student[["grades"]][2] or student$grades[2]
+
+student[["grades"]][2]
+# or
+student$grades[2]
+```
+
+```{r}
+#Question #10:
+
+#student["grades"] and student[["grades"]] look similar but return objects of different classes.
+
+class(student["grades"])
+class(student[["grades"]])
+
+
+#Run class() on each and explain the difference in what single-bracket [ ] versus double-bracket [[ ]] return from a list.
+
+#Answer: single bracket returns a value that belongs to a list, hence the value is classified as a "list". Double brackets on the other hand returns a value of that specific variable, such as grades being classified as numeric since it contains numeric values.
+
+```
+```{r}
+#Question #11:
+
+#Why do you think R makes a distinction between [ ] and [[ ]] for lists, but a vector only needs [ ]? Think about what a list can contain that a vector cannot.
+
+#Answer: lists can contain variables of different types, such as numeric, strings, etc. A vector on the other hand can only contain a variable of a specific type, such as grades being numeric. If you declare grades in a vector, that vector must only contain numeric values.
+```
+
+******* PART E — Critical Thinking Challenge
+```{r}
+
+```
+
